@@ -13,9 +13,10 @@ const App = () => {
     const [state, setState] = useState({
         web3: null,
         accounts: null,
-      contract:{},
+      contract: {},
         adoptersArray:[]
     });
+  
   const [page,setPage]=useState("home")
   const initialRender = useRef(true);
   // console.log(state.web3);

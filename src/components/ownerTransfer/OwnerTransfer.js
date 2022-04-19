@@ -8,6 +8,8 @@ export const OwnerTransfer = ({ state, contractInitiation }) => {
         address: ""
     });
 
+
+
     const [owner, setOwner] = useState("");
 
     useEffect(() => {
@@ -42,19 +44,33 @@ export const OwnerTransfer = ({ state, contractInitiation }) => {
         }
     }
 
-  return (
-      <div className='w-50' style={{margin:"0 auto"}}>
-          <div className='d-flex align-items-center my-3'>
-              <label className='mx-2 w-25'>Name:</label>
-              <input className='form-control' name="name" value={input["name"]} onChange={(e) => inputChange(e)}/>
-          </div>
-          <div className='d-flex align-items-center my-3'>
-              <label className='mx-2 w-25'>Address:</label>
-              <input className='form-control' name="address" value={input["address"]} onChange={(e) => inputChange(e)}/>
-          </div>
-          <button className='btn btn-success' onClick={transferOwnerToAddress}>Transfer</button>
+    return (
+      <div>
+        <div className='w-50' style={{margin:"0 auto"}}>
+            <div className='d-flex align-items-center my-3'>
+                <label className='mx-2 w-25'>Name:</label>
+                <input className='form-control' name="name" value={input["name"]} onChange={(e) => inputChange(e)}/>
+            </div>
+            <div className='d-flex align-items-center my-3'>
+                <label className='mx-2 w-25'>Address:</label>
+                <input className='form-control' name="address" value={input["address"]} onChange={(e) => inputChange(e)}/>
+            </div>
+            <button className='btn btn-success' onClick={transferOwnerToAddress}>Transfer</button>
 
-          {owner.length>0 && <p>The owner address is <b>{owner}</b></p>}
+            {owner.length>0 && <p>The owner address is <b>{owner}</b></p>}
+        </div>
+            
+            {/* <div className='w-50 border rounded px-5 py-3 mt-5' style={{margin:"0 auto"}}>
+                <div className='d-flex align-items-center my-3'>
+                <label className='mx-2 w-25'>Name:</label>
+                <input className='form-control' name="name" value={input["name"]} onChange={(e) => inputChange(e)}/>
+            </div>
+            <div className='d-flex align-items-center my-3'>
+                <label className='mx-2 w-25'>Address:</label>
+                <input className='form-control' name="address" value={input["address"]} onChange={(e) => inputChange(e)}/>
+            </div>
+            <button className='btn btn-success' onClick={transferOwnerToAddress}>Transfer</button>
+        </div> */}
     </div>
   )
 }
