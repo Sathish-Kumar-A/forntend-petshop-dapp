@@ -47,9 +47,9 @@ const componentMountFunction = async (contractName,Adoption) => {
     }
   
   const getValue = async () => {
-    console.log(state["contract"]["adoption"])
+    // console.log(state["contract"]["adoption"])
     const response = await state["contract"]["adoption"].methods.getAdopters().call();
-    console.log(response);
+    // console.log(response);
     setState({ ...state, adoptersArray: response });
   }
 

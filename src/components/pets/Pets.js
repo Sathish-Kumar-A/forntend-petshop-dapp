@@ -25,8 +25,9 @@ export const Pets = ({ state,setState }) => {
     const updatePetAdopted = async (id, price) => {
         const petPriceToEther=price*1000000000000000000;
         if (state["contract"].adoption) {
-            await state["contract"]["adoption"].methods.adopt(id).send({ from: state["accounts"][0] });
-            await state["contract"]["adoption"].methods.transferEther().send({ from: state["accounts"][0],value:petPriceToEther });
+            await state["contract"]["adoption"].methods.adopt(id).send({ from: state["accounts"][0],value:petPriceToEther });
+            // let etherTransferResponse = await state["contract"]["adoption"].methods.transferEther().send({ from: state["accounts"][0], value: petPriceToEther });
+            // console.log(etherTransferResponse);
             const response = await state["contract"]["adoption"].methods.getAdopters().call();
             setState({ ...state, adoptersArray: response });
         }
